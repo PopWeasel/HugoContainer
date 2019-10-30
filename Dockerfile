@@ -1,11 +1,12 @@
 # Use alpine
 From alpine:latest
 
-Expose 80
+Expose 1313
 
-apk add git
-apk add nginx
-apk add hugo
+RUN apk add --update \
+    git \
+    hugo
 
-Workdir /website
+WORKDIR /website
+CMD ["hugo", "server"]
 
