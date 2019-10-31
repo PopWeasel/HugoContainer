@@ -8,5 +8,5 @@ RUN apk add --update \
     hugo
 
 WORKDIR /website
-CMD ["hugo", "server"]
+ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0"]
 
